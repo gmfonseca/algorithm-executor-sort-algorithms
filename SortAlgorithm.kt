@@ -1,4 +1,4 @@
-package br.com.gmfonseca.tcc
+package br.com.gmfonseca.tcc.algorithms
 
 /**
  * A generic collections sorter algorithm. Receives comparable elements, making sort easy.

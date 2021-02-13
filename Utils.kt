@@ -1,4 +1,4 @@
-package br.com.gmfonseca.tcc
+package br.com.gmfonseca.tcc.algorithms
 
 fun <T> MutableList<T>.swap(indexA: Int, indexB: Int) {
     val temp = this[indexA]

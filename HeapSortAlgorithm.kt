@@ -1,4 +1,4 @@
-package br.com.gmfonseca.tcc
+package br.com.gmfonseca.tcc.algorithms
 
 /**
  * Created by Gabriel Fonseca on 31/01/2021.

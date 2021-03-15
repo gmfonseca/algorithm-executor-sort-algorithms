@@ -5,6 +5,6 @@ package br.com.gmfonseca.tcc.algorithms
  */
 interface SortAlgorithm<T : Comparable<T>> {
 
-    fun sort(items: List<T>): List<T>
+    fun sort(items: MutableList<T>): List<T>
 
 }

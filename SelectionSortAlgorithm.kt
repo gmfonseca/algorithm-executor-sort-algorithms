@@ -5,19 +5,18 @@ package br.com.gmfonseca.tcc.algorithms
  */
 class SelectionSortAlgorithm<T : Comparable<T>> : SortAlgorithm<T> {
 
-    override fun sort(items: List<T>): List<T> {
-        val mutableList = items.toMutableList()
+    override fun sort(items: MutableList<T>): List<T> {
 
-        for (i in mutableList.indices) {
+        for (i in items.indices) {
             var lower = i
-            for (j in (i + 1) until mutableList.size) {
-                if (mutableList[j] < mutableList[lower]) {
+            for (j in (i + 1) until items.size) {
+                if (items[j] < items[lower]) {
                     lower = j
                 }
             }
-            mutableList.swap(lower, i)
+            items.swap(lower, i)
         }
 
-        return mutableList
+        return items
     }
 }

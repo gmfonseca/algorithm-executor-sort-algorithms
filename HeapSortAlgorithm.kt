@@ -5,8 +5,7 @@ package br.com.gmfonseca.tcc.algorithms
  */
 class HeapSortAlgorithm<T : Comparable<T>> : SortAlgorithm<T> {
 
-    override fun sort(items: List<T>): List<T> {
-        val mutableList = items.toMutableList()
+    override fun sort(items: MutableList<T>): List<T> {
         var size = items.size
         var i = size / 2
         var parent: Int
@@ -16,25 +15,25 @@ class HeapSortAlgorithm<T : Comparable<T>> : SortAlgorithm<T> {
         while (true) {
             if (i > 0) {
                 i--
-                temp = mutableList[i]
+                temp = items[i]
             } else {
                 size--
                 if (size <= 0) {
-                    return mutableList
+                    return items
                 }
-                temp = mutableList[size]
-                mutableList[size] = mutableList.first()
+                temp = items[size]
+                items[size] = items.first()
             }
 
             parent = i
             child = ((i * 2) + 1)
             while (child < size) {
-                if ((child + 1 < size) && mutableList[child + 1] > mutableList[child]) {
+                if ((child + 1 < size) && items[child + 1] > items[child]) {
                     child++
                 }
 
-                if (mutableList[child] > temp) {
-                    mutableList[parent] = mutableList[child]
+                if (items[child] > temp) {
+                    items[parent] = items[child]
                     parent = child
                     child = parent * 2 + 1
                 } else {
@@ -42,7 +41,7 @@ class HeapSortAlgorithm<T : Comparable<T>> : SortAlgorithm<T> {
                 }
             }
 
-            mutableList[parent] = temp
+            items[parent] = temp
         }
     }
 }
